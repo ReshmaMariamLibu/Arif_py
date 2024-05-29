@@ -5,21 +5,18 @@ script , filename = argv
 txt = open(filename)
 data = txt.read()
 
-# calculates word count , char count and sentence count
-word_count = len(data.split()) # .split() method splits the text into words. The len() function then counts the number of words.
-char_count = len(data)  # counts the total number of characters in the text
-sentence_count = data.count('.') + data.count('!') + data.count('?') #
+word_count = len(data.split())
+char_count = len(data) 
+sentence_count = data.count('.') + data.count('!') + data.count('?') 
 
-#prints the word count , character count and sentence count
+
 print(f"Word count is: {word_count}")
 print(f"Character count is: {char_count}")
 print(f"sentence count is: {sentence_count}")
 
-# calculates Arif using the formula
 arif= 4.71 * (char_count/word_count) + 0.5 * (word_count/sentence_count) - 21.43
 print(f"Arif value is: {arif}" )
 
-# condition to check readability index based on reading level.
 if (arif<1):
      print("kindergarden")
 elif (arif<2):
